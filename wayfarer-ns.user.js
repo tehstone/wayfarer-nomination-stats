@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Wayfarer Nomination Detail
-// @version      0.1.0
+// @version      0.1.1
 // @description  Add extended Wayfarer Profile stats
-// @namespace    https://github.com/tehstone/wayfarer-nomination-detail
-// @downloadURL  https://github.com/tehstone/wayfarer-nomination-detail/raw/main/wayfarer-nd.user.js
-// @homepageURL  https://github.com/tehstone/wayfarer-nomination-detail
+// @namespace    https://github.com/tehstone/wayfarer-nomination-stats
+// @downloadURL  https://github.com/tehstone/wayfarer-nomination-stats/raw/main/wayfarer-ns.user.js
+// @homepageURL  https://github.com/tehstone/wayfarer-nomination-stats
 // @match        https://wayfarer.nianticlabs.com/*
 // ==/UserScript==
 
