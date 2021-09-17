@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         Wayfarer Nomination Detail
-// @version      0.1.1
+// @name         Wayfarer Nomination Stats
+// @version      0.2.0
 // @description  Add extended Wayfarer Profile stats
 // @namespace    https://github.com/tehstone/wayfarer-nomination-stats
 // @downloadURL  https://github.com/tehstone/wayfarer-nomination-stats/raw/main/wayfarer-ns.user.js
@@ -110,7 +110,6 @@ function init() {
 		    }
 		}
 
-	    console.log(acceptedCount);
 	    const statsContainer = document.createElement('div');
         statsContainer.setAttribute('class', 'wrap-collabsible')
         statsContainer.id = "nomStats";
@@ -121,12 +120,12 @@ function init() {
         collapsibleInput.type = "checkbox";
 
         const collapsibleLabel = document.createElement("label");
-        collapsibleLabel.setAttribute("class", "lbl-toggle");
+        collapsibleLabel.setAttribute("class", "lbl-toggle-ns");
         collapsibleLabel.innerText = "View Nomination Stats";
         collapsibleLabel.setAttribute("for", "collapsed-stats");
 
         const collapsibleContent = document.createElement("div");
-        collapsibleContent.setAttribute("class", "collapsible-content");
+        collapsibleContent.setAttribute("class", "collapsible-content-ns");
 
 	    let html = "";
 	    html += "Total Nominations: " + parseInt(nomCount) +
@@ -138,7 +137,7 @@ function init() {
             "<br/>In Queue: " + parseInt(inQueueCount) + " (" + parseInt(inQueueUpgradeCount) + " upgraded)" +
             "<br/>Accepted ratio: 1:" + Math.round(10*(1/(acceptedCount/deniedCount)))/10 + "<br/>";
 
-        
+
 
         const div = document.createElement('div');
         div.classList.add('wayfarernd');
@@ -205,7 +204,7 @@ function init() {
 			}
 
 			.dark .wayfarernd {
-				color: #ddd;
+				color: #000000;
 			}
 
 			.wayfarercc__button {
@@ -225,11 +224,11 @@ function init() {
 			}
 
 			#collapsible,
-			#collapsed-map {
+			#collapsed-stats {
 				display: none;
 			}
 
-			.lbl-toggle {
+			.lbl-toggle-ns {
 				display: block;
 				font-weight: bold;
 				font-family: monospace;
@@ -244,11 +243,11 @@ function init() {
 				transition: all 0.25s ease-out;
 			}
 
-			.lbl-toggle:hover {
+			.lbl-toggle-ns:hover {
 				color: lightgrey;
 			}
 
-			.lbl-toggle::before {
+			.lbl-toggle-ns::before {
 				content: ' ';
 				display: inline-block;
 				border-top: 5px solid transparent;
@@ -264,26 +263,26 @@ function init() {
 				display:none;
 			}
 
-			.toggle:checked+.lbl-toggle::before {
+			.toggle:checked+.lbl-toggle-ns::before {
 				transform: rotate(90deg) translateX(-3px);
 			}
 
-			.collapsible-content {
+			.collapsible-content-ns {
 				max-height: 0px;
 				overflow: hidden;
 				transition: max-height .25s ease-in-out;
 			}
 
-			.toggle:checked+.lbl-toggle+.collapsible-content {
+			.toggle:checked+.lbl-toggle-ns+.collapsible-content-ns {
 				max-height: 9999999pt;
 			}
 
-			.toggle:checked+.lbl-toggle {
+			.toggle:checked+.lbl-toggle-ns {
 				border-bottom-right-radius: 0;
 				border-bottom-left-radius: 0;
 			}
 
-			.collapsible-content .content-inner {
+			.collapsible-content-ns .content-inner {
 				border-bottom: 1px solid rgba(0, 0, 0, 1);
 				border-left: 1px solid rgba(0, 0, 0, 1);
 				border-right: 1px solid rgba(0, 0, 0, 1);
